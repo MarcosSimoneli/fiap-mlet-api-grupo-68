@@ -1,0 +1,23 @@
+name: Create PR to Main
+
+on:
+  workflow_run:
+    workflows: ["Python application"]
+    types:
+      - completed
+
+jobs:
+  create_pr_to_main:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: "Automatically created PR to main"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          base: develop
