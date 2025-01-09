@@ -37,10 +37,18 @@ jobs:
         pytest
 
   create-pull-request:
-    needs: build
     runs-on: ubuntu-latest
+
     steps:
-    - name: create pull request
-      run: gh pr create -B feature/* -H develop --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Create pull request from feature branch"
+        branch: "develop"
+        title: "Pull request from feature branch"
+        body: "This is an automated pull request from feature branch to develop."
+        labels: "automated pr"
