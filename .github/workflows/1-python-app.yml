@@ -40,15 +40,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v5
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        branch: develop
-        commit-message: "Automated PR: Update from feature branch"
-        title: "Automated PR: Update from feature branch"
-        body: "This PR is automatically created from the feature branch."
-        labels: "automated pr"
-        merge-method: none
+    - name: create pull request
+      run: gh pr create -B base_branch -H branch_to_merge --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
