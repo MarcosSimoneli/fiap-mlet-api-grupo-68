@@ -40,5 +40,5 @@ jobs:
         commit-message: "Automated PR: Update from feature branch"
         title: "Automated PR: Update from feature branch"
         body: "This PR is automatically created from the feature branch."
-        labels: 
+        labels: |
           - "automated pr"
