@@ -41,8 +41,8 @@ jobs:
     needs: build
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+    # - name: Checkout repository
+    #   uses: actions/checkout@v4
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
