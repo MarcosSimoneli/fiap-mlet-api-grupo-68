@@ -44,6 +44,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Make changes
+      run: |
+        echo "Some changes made on $(date)" >> changes.txt
+        git add changes.txt
+        git commit -m "Automated changes on $(date)"
+
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3
       with:
