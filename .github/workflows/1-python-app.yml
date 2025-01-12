@@ -41,15 +41,7 @@ jobs:
     needs: build
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v3
-      with:
-        branch: "develop"
-        title: "Pull request from feature branch"
-        commit-message: "Cre ate pull request from feature branch"
-        body: "This is an automated pull request from feature branch to develop."
-        labels: "automated pr"
-        token: ${{ secrets.GITHUB_TOKEN }} 
+      - name: create pull request
+        run: gh pr create -B feature/* -H develop --title 'Pull request from feature branch' --body 'This is an automated pull request from feature branch to develop.'
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
