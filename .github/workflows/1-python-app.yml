@@ -52,4 +52,4 @@ jobs:
         commit-message: "Cre ate pull request from feature branch"
         body: "This is an automated pull request from feature branch to develop."
         labels: "automated pr"
-        token: ${{ secrets.GITHUB_TOKEN }} 
+        token: ${{ secrets.GITHUB_TOKEN }}
