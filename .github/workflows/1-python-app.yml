@@ -42,6 +42,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Verify current directory
+      run: pwd
+    - name: List files in current directory :)
+      run: ls -la
     - name: create pull request
       run: gh pr create -H develop --title 'Pull request automated by GithubActions' --body 'This is an automated pull request from feature branch to develop.'
       env:
