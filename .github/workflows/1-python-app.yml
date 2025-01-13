@@ -44,7 +44,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Verify current directory
       run: pwd
-    - name: List files in current directory
+    - name: List files in current directory :)
       run: ls -la
     - name: create pull request
       run: gh pr create -H develop --title 'Pull request from feature branch' --body 'This is an automated pull request from feature branch to develop.'
