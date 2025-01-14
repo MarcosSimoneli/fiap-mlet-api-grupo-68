@@ -43,17 +43,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: create pull request
-      run: |
-        pr_url=$(gh pr list -H develop --json url -q '.[0].url')
-        if [ -z "$pr_url" ]; then
-          gh pr create -H develop --title 'Pull request from feature branch >> Develop' --body 'This is an automated pull request from feature branch to develop.'
-        else
-          pr_state=$(gh pr view "$pr_url" --json state -q '.state')
-          if [ "$pr_state" = "OPEN" ]; then
-            gh pr comment "$pr_url" --body 'New commits have been pushed to the feature branch.'
-          else
-            gh pr create -H develop --title 'Pull request from feature branch >> Develop' --body 'This is an automated pull request from feature branch to develop.'
-          fi
-        fi
+      run: gh pr create -H develop --title 'Pull request from feature branch' --body 'This is an automated pull request from feature branch to develop.'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
