@@ -46,7 +46,7 @@ jobs:
       run: |
         pr_url=$(gh pr list -H develop -B main --json url -q '.[0].url')
         if [ -z "$pr_url" ]; then
-          gh pr create -B main -H develop --title 'Automated PR from develop to main' --body 'This is an automated pull request from develop to main.'
+          gh pr create -H develop --title 'Pull request from feature branch >> Develop' --body 'This is an automated pull request from feature branch to develop.'
         else
           gh pr comment "$pr_url" --body 'New commits have been pushed to the feature branch.'
           gh pr ready "$pr_url"
