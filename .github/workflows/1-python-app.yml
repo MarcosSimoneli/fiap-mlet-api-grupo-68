@@ -45,4 +45,4 @@ jobs:
     - name: create pull request
       run: gh pr create -H develop --title 'Pull request from feature branch' --body 'This is an automated pull request from feature branch to develop.'
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
