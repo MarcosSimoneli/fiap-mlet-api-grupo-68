@@ -43,6 +43,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: create pull request
-      run: gh pr create -B ${{ github.head_ref }} -H develop --title 'Pull request from feature branch' --body 'This is an automated pull request from feature branch to develop.'
+      run: gh pr create -H develop --title 'Pull request from feature branch' --body 'This is an automated pull request from feature branch to develop.'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
