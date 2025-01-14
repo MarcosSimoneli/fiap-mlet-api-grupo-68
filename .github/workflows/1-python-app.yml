@@ -50,6 +50,5 @@ jobs:
         else
           gh pr comment "$pr_url" --body 'New commits have been pushed to the feature branch.'
           gh pr ready "$pr_url"
-        fi
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
