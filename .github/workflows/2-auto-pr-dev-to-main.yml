@@ -1,0 +1,19 @@
+name: Auto PR from develop to main
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - develop
+
+jobs:
+  auto-pr:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Create pull request from develop to main
+      run: gh pr create -B main -H develop --title 'Automated PR from develop to main' --body 'This is an automated pull request from develop to main.'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
