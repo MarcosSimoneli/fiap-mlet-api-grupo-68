@@ -2,3 +2,4 @@ FastAPI
 uvicorn
 requests
 pandas
+python-jose
