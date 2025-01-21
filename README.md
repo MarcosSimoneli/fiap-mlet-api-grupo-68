@@ -1,52 +1,61 @@
-# my-fastapi-app/my-fastapi-app/README.md
+# Api Embrapa Grupo 68
 
-# My FastAPI App
+Essa é uma API que disponibiliza dados de vitivinicultura da Embrapa.
 
-This is a simple FastAPI application that demonstrates a basic "Hello, World!" functionality.
-
-## Project Structure
+## Estrutura do Projeto
 
 ```
 my-fastapi-app
 ├── src
-│   ├── main.py          # Entry point of the FastAPI application
+│   ├── main.py              # Ponto de entrada da aplicação FastAPI
 │   └── routes
-│       └── hello.py     # Defines the Hello World route
-├── requirements.txt      # Lists project dependencies
-└── README.md             # Project documentation
+│       ├── health_check.py  # Rota para checar se a aplicação está saudável
+│       ├── comercio.py      # Define rota que expõe os dados do comércio
+│       ├── exportacao.py    # Define rota que expõe os dados de exportação
+│       ├── importacao.py    # Define rota que expõe os dados de importação
+│       ├── processamento.py # Define rota que expõe os dados de processamentos
+│       └── producao.py      # Define rota que expõe os dados de produção
+├── requirements.txt         # Lista as dependências do projeto
+└── README.md                # Documentação do projeto
 ```
 
-## Requirements
+## Requisitos
 
-To run this application, you need to have Python installed along with the following dependencies:
+Para executar esta aplicação, você precisa ter Python instalado junto com as seguintes dependências:
 
 - FastAPI
 - Uvicorn
 
-You can install the required packages using pip:
+Você pode instalar os pacotes necessários usando pip:
 
 ```
 pip install -r requirements.txt
 ```
 
-## Running the Application
+## Executando a Aplicação
 
-To start the FastAPI application, navigate to the `src` directory and run:
+Para iniciar a aplicação FastAPI, navegue até o diretório `src` e execute:
 
 ```
 uvicorn main:app --reload
 ```
 
-This will start the server, and you can access the application at `http://127.0.0.1:8000`.
+Isso iniciará o servidor, e você poderá acessar a aplicação em `http://127.0.0.1:8000`.
 
-## Accessing the API
+## Acessando a API
 
-Once the server is running, you can access the "Hello, World!" endpoint at:
+Uma vez que o servidor esteja em execução, você pode acessar os seguintes endpoints:
 
-```
-http://127.0.0.1:8000/hello
-```
+- `GET /hello`: Retorna uma mensagem "Hello, World!".
+- `GET /embrapa/processamento/viniferas`: Retorna dados sobre viníferas.
+- `GET /embrapa/processamento/americanasHibridas`: Retorna dados sobre americanas e híbridas.
+- `GET /embrapa/processamento/uvasDeMesa`: Retorna dados sobre uvas de mesa.
+- `GET /embrapa/processamento/semClassificacao`: Retorna dados sobre sem classificação.
+- `GET /embrapa/producao`: Retorna dados sobre produção.
+- `GET /embrapa/comercio`: Retorna dados sobre comércio.
+- `GET /embrapa/importacao`: Retorna dados sobre importação.
+- `GET /embrapa/exportacao`: Retorna dados sobre exportação.
 
-## License
+## Licença
 
-This project is licensed under the MIT License.
+Este projeto está licenciado sob a Licença MIT.

@@ -1,7 +1,7 @@
 from fastapi import Depends, FastAPI
 from authentication.auth import validate_token, create_access_token
 from pydantic import BaseModel
-from routes.hello import router as hello_router
+from routes.health_check import router as hello_router
 from routes.processamento import router as processamento_router
 from routes.producao import router as producao_router
 from routes.comercio import router as comercio_router
