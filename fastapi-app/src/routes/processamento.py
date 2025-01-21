@@ -28,7 +28,7 @@ async def read_root():
     
     csv_content = response.content.decode('utf-8')
     
-    df = pd.read_csv(StringIO(csv_content), delimiter=';')
+    df = pd.read_csv(StringIO(csv_content), delimiter='\t')
     
     json_data = df.to_json(orient="records")
     
@@ -43,7 +43,7 @@ async def read_root():
     
     csv_content = response.content.decode('utf-8')
     
-    df = pd.read_csv(StringIO(csv_content), delimiter=';')
+    df = pd.read_csv(StringIO(csv_content), delimiter='\t')
     
     json_data = df.to_json(orient="records")
     
@@ -58,7 +58,7 @@ async def read_root():
     
     csv_content = response.content.decode('utf-8')
     
-    df = pd.read_csv(StringIO(csv_content), delimiter=';')
+    df = pd.read_csv(StringIO(csv_content), delimiter='\t')
     
     json_data = df.to_json(orient="records")
     
@@ -67,4 +67,4 @@ async def read_root():
     return result
 
 def register_routes(app):
-    app.include_router(router)
+    app.include_router(router)  

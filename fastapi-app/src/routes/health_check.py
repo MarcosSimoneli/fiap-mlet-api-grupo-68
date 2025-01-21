@@ -4,7 +4,7 @@ router = APIRouter()
 
 @router.get("/")
 async def read_root():
-    return {"message": "Hello, World!"}
+    return {"message": "Ok"}
 
 def register_routes(app):
     app.include_router(router)
