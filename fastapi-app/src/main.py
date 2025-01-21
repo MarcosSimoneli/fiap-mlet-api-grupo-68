@@ -1,5 +1,5 @@
 from fastapi import Depends, FastAPI
-from auth import validate_token, create_access_token
+from authentication.auth import validate_token, create_access_token
 from pydantic import BaseModel
 from routes.hello import router as hello_router
 from routes.processamento import router as processamento_router
@@ -38,7 +38,3 @@ def create_app():
     return app
 
 app = create_app()
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
