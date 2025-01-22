@@ -7,7 +7,7 @@ import json
 router = APIRouter()
 
 @router.get("/")
-async def read_root():  
+async def producao():  
     url = r"http://vitibrasil.cnpuv.embrapa.br/download/Producao.csv"
     response = requests.get(url)
     

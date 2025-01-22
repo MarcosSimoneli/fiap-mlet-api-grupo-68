@@ -7,7 +7,7 @@ import json
 router = APIRouter()
 
 @router.get("/viniferas")
-async def read_root():
+async def viniferas():
     url = r"http://vitibrasil.cnpuv.embrapa.br/download/ProcessaViniferas.csv"
     response = requests.get(url)
     
@@ -22,7 +22,7 @@ async def read_root():
     return result
 
 @router.get("/americanasHibridas")
-async def read_root():
+async def americana_hibridas():
     url = r"http://vitibrasil.cnpuv.embrapa.br/download/ProcessaAmericanas.csv"
     response = requests.get(url)
     
@@ -37,7 +37,7 @@ async def read_root():
     return result
 
 @router.get("/uvasDeMesa")
-async def read_root():
+async def uvas_mesa():
     url = r"http://vitibrasil.cnpuv.embrapa.br/download/ProcessaMesa.csv"
     response = requests.get(url)
     
@@ -52,7 +52,7 @@ async def read_root():
     return result
 
 @router.get("/semClassificacao")
-async def read_root():
+async def sem_classificacao():
     url = r"http://vitibrasil.cnpuv.embrapa.br/download/ProcessaSemclass.csv"
     response = requests.get(url)
     

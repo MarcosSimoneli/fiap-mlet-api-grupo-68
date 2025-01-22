@@ -7,7 +7,7 @@ import json
 router = APIRouter()
 
 @router.get("/")
-async def read_root():
+async def importacao():
     url = r"http://vitibrasil.cnpuv.embrapa.br/download/ImpVinhos.csv"
     response = requests.get(url)
     
@@ -17,7 +17,7 @@ async def read_root():
     
     json_data = df.to_json(orient="records")
     
-    result = {"sem classificacao": json.loads(json_data)}
+    result = {"importacao": json.loads(json_data)}
 
     return result
 
