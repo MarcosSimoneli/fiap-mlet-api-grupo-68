@@ -58,6 +58,10 @@ Uma vez que o servidor esteja em execução, você pode acessar os seguintes end
 - `GET /embrapa/importacao`: Retorna dados sobre importação.
 - `GET /embrapa/exportacao`: Retorna dados sobre exportação.
 
+## Insomnia
+
+O arquivo ApiEmbrapa.json é um curl com todos endpoints configurados para acesso a api.
+
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT.
