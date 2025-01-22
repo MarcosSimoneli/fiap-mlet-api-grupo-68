@@ -46,7 +46,7 @@ Isso iniciará o servidor, e você poderá acessar a aplicação em `http://127.
 
 Uma vez que o servidor esteja em execução, você pode acessar os seguintes endpoints:
 
-- `GET /hello`: Retorna uma mensagem "Hello, World!".
+- `GET /healh check`: Retorna uma mensagem "Ok".
 - `GET /embrapa/processamento/viniferas`: Retorna dados sobre viníferas.
 - `GET /embrapa/processamento/americanasHibridas`: Retorna dados sobre americanas e híbridas.
 - `GET /embrapa/processamento/uvasDeMesa`: Retorna dados sobre uvas de mesa.
