@@ -8,6 +8,8 @@ Essa é uma API que disponibiliza dados de vitivinicultura da Embrapa.
 my-fastapi-app
 ├── src
 │   ├── main.py              # Ponto de entrada da aplicação FastAPI
+│   └── authentication
+│       ├── auth.py          # Define rota para autenticação
 │   └── routes
 │       ├── health_check.py  # Rota para checar se a aplicação está saudável
 │       ├── comercio.py      # Define rota que expõe os dados do comércio
